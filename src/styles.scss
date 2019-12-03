@@ -1,0 +1,126 @@
+.app {
+  height: 100vh;
+  width: 100%;
+  background-color: #94bdd1;
+
+  > .row {
+    height: 100%;
+  }
+}
+
+.main-wrapper {
+  width: 100%;
+  height: 100%;
+
+  @media (min-width: 768px) {
+    width: 80%;
+  }
+}
+
+.sidebar {
+  width: 0;
+  background-color: #00501b;
+  height: 100%;
+
+  @media (min-width: 768px) {
+    width: 20%;
+  }
+
+  .sidebar-top {
+    width: 100%;
+    height: 50%;
+    position: relative;
+  }
+
+  .menu-wrapper {
+    height: 50vh;
+    padding-top: 5vh;
+    width: 100%;
+    background-color: #7d7ba1;
+    color: #fff;
+    position: relative;
+
+    .menu-container {
+      padding: 0 50px;
+      height: 40vh;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .content-container {
+      width: 100%;
+      .content {
+        .list-group-item {
+          background-color: transparent !important;
+          border-color: #fff !important;
+          color: #fff;
+
+          .item-content {
+            overflow: hidden;
+            height: 0;
+
+            .text {
+              padding: 0.5em;
+            }
+          }
+
+          &.active .item-content {
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+.scroll-wrapper {
+  height: 100%;
+  width: 100%;
+
+  .scroll-outer-container {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+  }
+
+  .scroll-inner-container {
+    height: 100%;
+    margin-right: -17px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .scrollbar-container {
+    // display: none;
+    height: 100%;
+    width: 6px;
+    border-radius: 4px;
+    position: absolute;
+    top: 0;
+    right: 3px;
+    bottom: 0;
+    background-color: coral;
+
+    .custom-scrollbar {
+      background-color: #94bdd1;
+      width: 100%;
+      // height: 50px;
+      border-radius: 4px;
+      position: relative;
+      // pointer-events: none;
+    }
+  }
+
+  &.mobile {
+    .scroll-inner-container {
+      overflow: auto;
+      margin-right: 0;
+    }
+
+    .scrollbar-container {
+      display: none;
+    }
+  }
+}
